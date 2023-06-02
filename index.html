@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>handon_1-mongodb</title>
+</head>
+<style>
+    body{background-color: rgb(240, 240, 235);}
+    h1{color:blue}
+    h2{color:darkslategray}
+    h3{color:rgb(51, 179, 221)}
+</style>
+
+<body>
+
+    <h1>"https://prepbytes-misc-images.s3.ap-south-1.amazonaws.com/assets/1640781204638-employee.json</h1><br><br>
+
+    <h2>Create a database , give it name like ""Human_Resource"". Create a collection inside this named ""employee""
+    </h2>
+    <h3>use Human_Resources</h3>
+    <br>
+    <h2>Query the collection ""employee"" and list all the documents</h2>
+    <h3>
+        <pre>
+db.employee.insertMany([
+    {
+       
+        "firstName": "John",
+        "lastName": "Doe",
+        "salary": "25000",
+        "department": "HR",
+        "lastCompany": "X",
+        "lastSalary": "10000",
+        "overallExp": "2",
+        "contactInfo": "1234567890",
+        "yearGrad": "2016",
+        "gradStream": "CSE"
+    },
+    {
+        
+        "firstName": "Rohan",
+        "lastName": "Jame",
+        "salary": "30000",
+        "department": "Technical",
+        "lastCompany": "Y",
+        "lastSalary": "15000",
+        "overallExp": "1",
+        "contactInfo": "1234567860",
+        "yearGrad": "2015",
+        "gradStream": "CSE"
+    },
+    {
+        "firstName": "Jame",
+        "lastName": "Doe",
+        "salary": "35000",
+        "department": "Accounts",
+        "lastCompany": "Z",
+        "lastSalary": "20000",
+        "overallExp": "1",
+        "contactInfo": "123567890",
+        "yearGrad": "2019",
+        "gradStream": "ECE"
+    },
+    {
+       
+        "firstName": "Sao",
+        "lastName": "Avika",
+        "salary": "30000",
+        "department": "Sales",
+        "lastCompany": "Y",
+        "lastSalary": "15000",
+        "overallExp": "2",
+        "contactInfo": "1234567860",
+        "yearGrad": "2015",
+        "gradStream": "CSE"
+    },
+    {
+        
+        "firstName": "Jame",
+        "lastName": "roh",
+        "salary": "35000",
+        "department": "Accounts",
+        "lastCompany": "Z",
+        "lastSalary": "15000",
+        "overallExp": "2",
+        "contactInfo": "123567890",
+        "yearGrad": "2019",
+        "gradStream": "EEE"
+    },
+    {
+      
+        "firstName": "Rohan",
+        "lastName": "Jame",
+        "salary": "30000",
+        "department": "Technical",
+        "lastCompany": "Y",
+        "lastSalary": "15000",
+        "overallExp": "1",
+        "contactInfo": "1234567860",
+        "yearGrad": "2015",
+        "gradStream": "CSE"
+    },
+    {
+       
+        "firstName": "Jame",
+        "lastName": "Doe",
+        "salary": "35000",
+        "department": "Accounts",
+        "lastCompany": "Z",
+        "lastSalary": "20000",
+        "overallExp": "1",
+        "contactInfo": "123567890",
+        "yearGrad": "2019",
+        "gradStream": "ECE"
+    },
+    {
+     
+        "firstName": "Sao",
+        "lastName": "Avika",
+        "salary": "30000",
+        "department": "Sales",
+        "lastCompany": "Y",
+        "lastSalary": "15000",
+        "overallExp": "2",
+        "contactInfo": "1234567860",
+        "yearGrad": "2015",
+        "gradStream": "CSE"
+    },
+    {
+       
+        "firstName": "Jame",
+        "lastName": "Doe",
+        "salary": "35000",
+        "department": "Accounts",
+        "lastCompany": "Z",
+        "lastSalary": "15000",
+        "overallExp": "2",
+        "contactInfo": "123567890",
+        "yearGrad": "2019",
+        "gradStream": "EEE"
+    },
+    {
+       
+        "firstName": "Rohan",
+        "lastName": "Jame",
+        "salary": "30000",
+        "department": "Technical",
+        "lastCompany": "Y",
+        "lastSalary": "15000",
+        "overallExp": "1",
+        "contactInfo": "1234567860",
+        "yearGrad": "2015",
+        "gradStream": "CSE"
+    },
+    {
+        "firstName": "Jame",
+        "lastName": "Doe",
+        "salary": "35000",
+        "department": "Accounts",
+        "lastCompany": "Z",
+        "lastSalary": "20000",
+        "overallExp": "1",
+        "contactInfo": "123567890",
+        "yearGrad": "2019",
+        "gradStream": "ECE"
+    },
+    {
+       
+        "firstName": "Sao",
+        "lastName": "Avika",
+        "salary": "30000",
+        "department": "Sales",
+        "lastCompany": "Y",
+        "lastSalary": "15000",
+        "overallExp": "2",
+        "contactInfo": "1234567860",
+        "yearGrad": "2015",
+        "gradStream": "CSE"
+    },
+    {
+       
+        "firstName": "Jame",
+        "lastName": "Doe",
+        "salary": "35000",
+        "department": "Accounts",
+        "lastCompany": "Z",
+        "lastSalary": "15000",
+        "overallExp": "2",
+        "contactInfo": "123567890",
+        "yearGrad": "2019",
+        "gradStream": "EEE"
+    }
+])</pre></h3><br>
+        <h2>Query the collection ""employee"" and list the employees who are having salary more than 30000</h2>
+        <h3>db.employee.find({"salary":{$gt:"30000"}})</h3><br>
+        <h2>Query the collection ""employee"" and list the employees who are having experience more than 2 years.</h2>
+        <h3>db.employee.find({"overallExp":{$gt:"2"}})</h3><br>
+        <h2>Query the collection ""employee"" and list the employees who are graduated after 2015 and having experience
+            more than 1 year </h2>
+        <h3>db.employee.find({"yearGrad":{$gt:"2015"},"overallExp":{$gt:"1"}})</h3><br>
+        <h2>Query the collection ""employee"" and update the salary of the employee whose salary is greater than 70000
+            to 65000.</h2>
+        <h3>db.employee.updateMany({salary:{$gt:"70000"}},{$set:{salary:"65000"}})</h3><br>
+        <h2>Delete all the documents from ""employee"" where last company is Y"</h2>
+        <h3>db.employee.deleteMany({lastCompany:"Y"})</h3><br>
+
+
+
+
+
+</body>
+
+</html>
